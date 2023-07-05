@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Mini-projet cinéma NSI - Palissy 2020</title>
+
+	</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<body>
+    <input type="button" class="btn btn-light"><a href="/">Retour à la page d'accueil</a></button>
+    {% for el in infos %}
+        <h1>{{el[0]}}</h1>
+
+        <div>
+            <em>{{el[2]}}</em>
+        </div>
+
+    <div>
+        <p>Ma notation :</p>
+        <input type="radio" name="note" value="1"></input>
+        <input type="radio" name="note" value="2"></input>
+        <input type="radio" name="note" value="3"></input>
+        <input type="radio" name="note" value="4"></input>
+        <input type="radio" name="note" value="5"></input>
+    </div>
+    
+    
+    <dl>
+        <dt>Année</dt>
+        <dd>{{el[3]}}</dd>
+
+        <dt>Résumé</dt>
+        <dd style="width:400px">{{el[4]}}</dd>
+
+        <dt>Popularité</dt>
+        <dd>{{el[5]}}</dd>
+
+        <dt>Budget</dt>
+        <dd>{{el[6]}} $</dd>
+
+        <dt>Chiffre d'affaire</dt>
+        <dd>{{el[7]}} $</dd>
+
+        <dt>Page du film</dt>
+        <div>
+            <iframe width="800" height="400" name="page_film" src="https://www.google.com/search?q=%{{el[8]}}&btnI=Im+Feeling+Lucky"></iframe>
+            <dd><a href = "{{el[8]}}" target = "_blank">Cliquez içi pour afficher la page du film</a></dd>
+        </div>
+
+    {% endfor %}
+    </dl>
+
+    <!-- js pour le bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+</html>
+
+<style>
+    .checked {
+    color: orange;
+    }
+</style>

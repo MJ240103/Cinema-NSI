@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Mini-projet cinéma NSI - Palissy 2020</title>
+
+	</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<body>
+    <h1>Mini-projet cinéma</h1>
+
+    <h2>Résultat de la recherche</h2>
+    <ul>
+      {% for el in titres %}
+        <li><a href="/movie/{{el[1]}}">{{el[0]}}</a></li>
+      {% endfor %}
+    </ul>
+    <div class="container">
+        <div class="junbotron">
+            <h2>Rechercher un film par titre</h2>
+                <form action="/movies/" class="container">
+                    <div class="form-group">
+                        <input type="text" placeholder="mot(s) du titre" name="recherche"></input>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="nom d'une personne" name="nom"></input>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="etou" id="et" value="et">
+                        <label for="et">ET</label>
+                        <input type="radio" name="etou" id ="ou" value="ou" checked>
+                        <label for="ou">OU</label>
+                    </div>
+                    <input type="submit" value="chercher les films" class="btn btn-primary"></input>
+                </form>
+        
+        </div>
+    </div>
+
+    <!-- js pour le bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+</html>
+
+<style>
+    .checked {
+    color: orange;
+    }
+</style>
